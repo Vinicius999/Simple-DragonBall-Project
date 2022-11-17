@@ -1,14 +1,26 @@
 package DragonBallProject;
 
 public class Sayajin extends Guerreiro implements Extraterreste {
-    public Sayajin(String nome, int hp, int xp, int atk, int def, int vel) {
+    private int superSayajin;
+
+    // Constructor
+    public Sayajin(String nome, int hp, int xp, int atk, int def, int vel, int superSayajin) {
         super(nome, hp, xp, atk, def, vel);
+        this.superSayajin = superSayajin;
     }
 
+    // Getters e Setters
+    public int getSuperSayajin() {
+        return superSayajin;
+    }
+    public void setSuperSayajin(int superSayajin) {
+        this.superSayajin = superSayajin;
+    }
+    
     @Override
     public void atacar() {
         // TODO Auto-generated method stub
-        
+    
     }
 
     @Override
@@ -22,4 +34,5 @@ public class Sayajin extends Guerreiro implements Extraterreste {
         // TODO Auto-generated method stub
         
     }
+
 }

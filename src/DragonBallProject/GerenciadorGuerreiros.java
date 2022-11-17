@@ -5,10 +5,18 @@ import java.util.ArrayList;
 public class GerenciadorGuerreiros {
     ArrayList<Guerreiro> lista = new ArrayList<Guerreiro>();
 
+    // Getters e Setters
+    public ArrayList<Guerreiro> getLista() {
+        return lista;
+    }
+    public void setLista(ArrayList<Guerreiro> lista) {
+        this.lista = lista;
+    }
+
     public void addGuerreiro(Guerreiro g) {
         for (Guerreiro guerreiro: lista) {
             if (g.getNome() == guerreiro.getNome()) {
-                System.out.println("Matrícula já existente.");
+                System.out.println("Já há um guerreiro chamado "+g.getNome());
                 break;
             }
         }
@@ -28,20 +36,20 @@ public class GerenciadorGuerreiros {
     public void treinar(String nome, int dias) {
         for (Guerreiro g: lista) {
             if (nome == g.getNome()) {
-                //f.realizarPagamento(cargaHoraria, mes, ano, descricao);
-                return;
+                System.out.println("Alguma coisa");
+                
             }
         }
-        System.out.println("A matrícula informada não existe");
+        System.out.println("Guerreiro não encontrado");
     } 
 
     public void buscarGuerreiro(String nome) {
         for (Guerreiro g: lista) {
             if (nome == g.getNome()) {
-                //System.out.println(g.imprimir()); 
+                System.out.println(g.imprimir()); 
             }
         }
-        System.out.println("A matrícula informada não existe");
+        System.out.println("Não há um guerreiro chamado "+ nome);
     }
 
     public void imprimirTodos() {

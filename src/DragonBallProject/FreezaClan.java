@@ -1,8 +1,20 @@
 package DragonBallProject;
 
 public class FreezaClan extends Guerreiro implements Extraterreste {
-    public FreezaClan(String nome, int hp, int xp, int atk, int def, int vel) {
+    private int forma;
+
+    // Constructor
+    public FreezaClan(String nome, int hp, int xp, int atk, int def, int vel, int forma) {
         super(nome, hp, xp, atk, def, vel);
+        this.forma = forma;
+    }
+
+    // Getters e Setters
+    public int getforma() {
+        return forma;
+    }
+    public void setforma(int forma) {
+        this.forma = forma;
     }
 
     @Override
@@ -21,4 +33,5 @@ public class FreezaClan extends Guerreiro implements Extraterreste {
         // TODO Auto-generated method stub
         
     }
+
 }

@@ -40,19 +40,34 @@ public class Luta {
         this.perdedor = perdedor;
     }
 
-    /* 
-    public boolean SelecionarConfronto(String nome1, String nome2) {
 
+    public boolean selecionarConfronto(String nome1, String nome2) {
+        GerenciadorGuerreiros gg = new GerenciadorGuerreiros();
+
+        for (Guerreiro g: gg.getLista()) {
+            if (nome1 == g.getNome()) {
+                setGuerreiro1(g);
+            }
+            if (nome2 == g.getNome()) {
+                setGuerreiro2(g);
+            }
+            return true;
+        }
+        return false;
     }
 
-    public void IniciarLuta(Guerreiro guerreiro1, Guerreiro guerreiro2) {
-
+    public void iniciarLuta() {
+        if (guerreiro1.getVel() > guerreiro2.getVel()) {
+            guerreiro1.atacar();
+        } else {
+            guerreiro2.atacar();
+        }
     }
-
-    public String VerificarGanhador(Guerreiro guerreiro1, Guerreiro guerreiro2) {
+/* 
+    public void verificarGanhador(Guerreiro guerreiro1, Guerreiro guerreiro2) {
         
     }:
-    */
+*/
    
     
 }
