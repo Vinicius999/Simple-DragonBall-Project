@@ -8,8 +8,8 @@ public class Humano extends Guerreiro {
 
     @Override
     public void atacar() {
-        // TODO Auto-generated method stub
-        
+        // implementações futuras
+        System.out.println(getNome()+" ataca!");
     }
 
     @Override

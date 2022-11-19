@@ -19,8 +19,8 @@ public class Sayajin extends Guerreiro implements Extraterreste {
     
     @Override
     public void atacar() {
-        // TODO Auto-generated method stub
-    
+        // implementações futuras
+        System.out.println(getNome()+" ataca!");
     }
 
     @Override
@@ -31,7 +31,6 @@ public class Sayajin extends Guerreiro implements Extraterreste {
 
     @Override
     public void transformacao() {
-        // TODO Auto-generated method stub
         
     }
 

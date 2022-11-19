@@ -33,6 +33,7 @@ public class GerenciadorGuerreiros {
         System.out.println("Guerreiro não encontrado");
     }
     
+    // Implementar futuramente
     public void treinar(String nome, int dias) {
         for (Guerreiro g: lista) {
             if (nome == g.getNome()) {
@@ -45,18 +46,19 @@ public class GerenciadorGuerreiros {
 
     public void buscarGuerreiro(String nome) {
         for (Guerreiro g: lista) {
-            if (nome == g.getNome()) {
-                System.out.println(g.imprimir()); 
+            System.out.println(nome.toUpperCase() +" vs "+g.getNome().toUpperCase());
+            if ( nome.toUpperCase() == g.getNome().toUpperCase() ) {
+                System.out.println(g.imprimir());
+                return;
             }
-        }
+        } 
         System.out.println("Não há um guerreiro chamado "+ nome);
     }
 
     public void imprimirTodos() {
         for (Guerreiro g: lista) {
-            System.out.println("Nome do Guerreiro:"+ g.getNome()
+            System.out.println("Nome do Guerreiro: "+ g.getNome()
             + "\nAtaque: "+ g.getAtk());
-            System.out.println("\n");
         }
     }
 }

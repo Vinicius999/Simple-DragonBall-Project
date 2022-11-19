@@ -1,17 +1,21 @@
 package DragonBallProject;
 
+import java.util.Random;
+
 public class Luta {
     private Guerreiro guerreiro1;
     private Guerreiro guerreiro2;
-    private Guerreiro ganhador;
+    private Guerreiro vencedor;
     private Guerreiro perdedor;
 
+    Random random = new Random();
+
      // Constructor
-    public Luta(Guerreiro guerreiro1, Guerreiro guerreiro2, Guerreiro ganhador, Guerreiro perdedor) {
-        this.guerreiro1 = guerreiro1;
-        this.guerreiro2 = guerreiro2;
-        this.ganhador = ganhador;
-        this.perdedor = perdedor;
+    public Luta() {
+        this.guerreiro1 = null;
+        this.guerreiro2 = null;
+        this.vencedor = null;
+        this.perdedor = null;
     }
 
     // Getters e Setters
@@ -27,11 +31,11 @@ public class Luta {
     public void setGuerreiro2(Guerreiro guerreiro2) {
         this.guerreiro2 = guerreiro2;
     }
-    public Guerreiro getGanhador() {
-        return ganhador;
+    public Guerreiro getVencedor() {
+        return vencedor;
     }
-    public void setGanhador(Guerreiro ganhador) {
-        this.ganhador = ganhador;
+    public void setVencedor(Guerreiro vencedor) {
+        this.vencedor = vencedor;
     }
     public Guerreiro getPerdedor() {
         return perdedor;
@@ -47,27 +51,59 @@ public class Luta {
         for (Guerreiro g: gg.getLista()) {
             if (nome1 == g.getNome()) {
                 setGuerreiro1(g);
+            } else {
+                System.out.println(nome1 +"não encontrado");
+                return false;
             }
             if (nome2 == g.getNome()) {
                 setGuerreiro2(g);
+            } else {
+                System.out.println(nome2 +"não encontrado");
+                return false;
             }
-            return true;
         }
-        return false;
+        return true;
     }
 
     public void iniciarLuta() {
-        if (guerreiro1.getVel() > guerreiro2.getVel()) {
-            guerreiro1.atacar();
-        } else {
-            guerreiro2.atacar();
+        while ( !verificarVencedor(guerreiro1, guerreiro2) ) {
+            if (guerreiro1.getVel() > guerreiro2.getVel()) {
+                guerreiro1.atacar();
+                if (guerreiro1.getXp() * random.nextInt(11) > guerreiro2.getXp() * random.nextInt(11)) {
+                    guerreiro2.setHp((int)(guerreiro1.getAtk() - (guerreiro2.getDef() / 2)));
+                    System.out.println(guerreiro1.getNome() + ": ataque entrou");
+                } else {
+                    System.out.println(guerreiro1.getNome() + ": ataque defendido");
+                }
+            } else {
+                guerreiro2.atacar();
+                if (guerreiro2.getXp() * random.nextInt(11) > guerreiro1.getXp() * random.nextInt(11)) {
+                    guerreiro1.setHp((int)(guerreiro2.getAtk() - (guerreiro1.getDef() / 2)));
+                    System.out.println("\n"+ guerreiro2.getNome() + ": ataque entrou");
+                } else {
+                    System.out.println("\n"+ guerreiro1.getNome() + ": ataque defendido");
+                }
+            }
+        }   
+    }
+
+    public boolean verificarVencedor(Guerreiro guerreiro1, Guerreiro guerreiro2) {
+        if (guerreiro1.getHp() == 0 | guerreiro2.getHp() == 0) {
+            if (guerreiro1.getHp() == 0) {
+                setPerdedor(guerreiro1);
+                setVencedor(guerreiro2);
+            } else {
+                setPerdedor(guerreiro2);
+                setVencedor(guerreiro1);
+            }
+            System.out.println("Vencedor: "+getVencedor().getNome()+"Perdedor: "+getPerdedor().getNome());
+            return true;    
+        }
+        else {
+            return false;
         }
     }
-/* 
-    public void verificarGanhador(Guerreiro guerreiro1, Guerreiro guerreiro2) {
-        
-    }:
-*/
+
    
     
 }

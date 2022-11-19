@@ -19,7 +19,8 @@ public class FreezaClan extends Guerreiro implements Extraterreste {
 
     @Override
     public void atacar() {
-        // TODO Auto-generated method stub
+        // implementações futuras
+        System.out.println(getNome()+" ataca!");
     }
 
     @Override
@@ -30,8 +31,7 @@ public class FreezaClan extends Guerreiro implements Extraterreste {
 
     @Override
     public void transformacao() {
-        // TODO Auto-generated method stub
-        
+        System.out.println(getNome()+" se transforma em SSJ"+ getforma());
     }
 
 }
