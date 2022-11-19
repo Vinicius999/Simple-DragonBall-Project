@@ -23,10 +23,25 @@ public class App {
 
         gerenG.imprimirTodos();
         
-        System.out.println("Buscar guerreiro: ");
-        String nome = sc.next();
-        gerenG.buscarGuerreiro(nome);
+        System.out.println("\nBuscar guerreiro: ");
+        gerenG.buscarGuerreiro(sc.next());
+
+        System.out.println("\nRemover guerreiro: ");
+        if ( gerenG.removerGuerreiro(sc.next()) ) {
+            System.out.println("Guerreiro removido!");
+        } else {
+            System.out.println("Guerreiro não encontrado");
+        }
+
+        System.out.println("\nBuscar guerreiro: ");
         
+
+        if ( ! gerenG.buscarGuerreiro(sc.next()) ) {
+            System.out.println("Guerreiro não encontrado");
+        }
+        
+        gerenG.imprimirTodos();
+
 /*       
         String nome01 = sc.next("Nome do primeiro guerreiro: ");
         String nome02 = sc.next("Nome do segundo guerreiro: ");

@@ -23,14 +23,14 @@ public class GerenciadorGuerreiros {
         lista.add(g);
     }
 
-    public void removerGuerreiro(String nome) {
+    public boolean removerGuerreiro(String nome) {
         for (Guerreiro g: lista) {
-            if (nome == g.getNome()) {
+            if ( nome.toUpperCase().equals(g.getNome().toUpperCase()) ) {
                 lista.remove(g);
-                return;
+                return true;
             }
         }
-        System.out.println("Guerreiro não encontrado");
+        return true;
     }
     
     // Implementar futuramente
@@ -44,15 +44,16 @@ public class GerenciadorGuerreiros {
         System.out.println("Guerreiro não encontrado");
     } 
 
-    public void buscarGuerreiro(String nome) {
+    public boolean buscarGuerreiro(String nome) {
         for (Guerreiro g: lista) {
-            System.out.println(nome.toUpperCase() +" vs "+g.getNome().toUpperCase());
-            if ( nome.toUpperCase() == g.getNome().toUpperCase() ) {
+            //System.out.println(nome.toUpperCase() +" vs "+g.getNome().toUpperCase()); 
+            // nome.toUpperCase().equals(g.getNome().toUpperCase())
+            if ( nome.toUpperCase().equals(g.getNome().toUpperCase()) ) {
                 System.out.println(g.imprimir());
-                return;
+                return true;
             }
         } 
-        System.out.println("Não há um guerreiro chamado "+ nome);
+        return false;
     }
 
     public void imprimirTodos() {
@@ -61,4 +62,12 @@ public class GerenciadorGuerreiros {
             + "\nAtaque: "+ g.getAtk());
         }
     }
+
+
+    @Override
+    public String toString() {
+        return "GerenciadorGuerreiros [lista=" + lista + "]";
+    }
+
+    
 }

@@ -10,10 +10,10 @@ public class FreezaClan extends Guerreiro implements Extraterreste {
     }
 
     // Getters e Setters
-    public int getforma() {
+    public int getForma() {
         return forma;
     }
-    public void setforma(int forma) {
+    public void setForma(int forma) {
         this.forma = forma;
     }
 
@@ -25,13 +25,13 @@ public class FreezaClan extends Guerreiro implements Extraterreste {
 
     @Override
     public String imprimir() {
-        return "FreezaClan [Nome=" + super.getNome() + ", HP=" + super.getHp() + ", XP=" + super.getXp() + ", ATK="
-        + super.getAtk() + ", DEF=" + super.getDef() + ", Vel=" + super.getVel() + ", lista=" + super.getLista() + "]";
+        return "FreezaClan [Nome = " + super.getNome() + ", HP = " + super.getHp() + ", XP = " + super.getXp() + ", ATK = "
+        + super.getAtk() + ", DEF =" + super.getDef() + ", Vel = " + super.getVel() + "]";
     }
 
     @Override
     public void transformacao() {
-        System.out.println(getNome()+" se transforma em SSJ"+ getforma());
+        System.out.println(getNome()+" assume a forma "+ getForma());
     }
 
 }

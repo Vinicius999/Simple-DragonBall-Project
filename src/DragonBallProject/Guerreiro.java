@@ -10,7 +10,8 @@ public abstract class Guerreiro {
     private int def;
     private int vel;
 
-    ArrayList<Luta> lista = new ArrayList<Luta>();
+    // Implementações futuras
+    //ArrayList<Luta> lista = new ArrayList<Luta>();
     
     // Constructor
     public Guerreiro(String nome, int hp, int xp, int atk, int def, int vel) {
@@ -59,14 +60,12 @@ public abstract class Guerreiro {
     public void setVel(int vel) {
         this.vel = vel;
     }
-    public ArrayList<Luta> getLista() {
-        return lista;
-    }
 
     // Métodos abstratos
     public abstract void atacar();
         // Incrementa/decrementa os atributos do guerreiro
     public abstract String imprimir();
+        // Seria o método toString
         // Retorna as informações do funcionário
 
     

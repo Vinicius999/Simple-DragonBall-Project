@@ -26,7 +26,7 @@ public class Sayajin extends Guerreiro implements Extraterreste {
     @Override
     public String imprimir() {
         return "Sayajin [Nome=" + super.getNome() + ", HP=" + super.getHp() + ", XP=" + super.getXp() + ", ATK="
-        + super.getAtk() + ", DEF=" + super.getDef() + ", Vel=" + super.getVel() + ", lista=" + super.getLista() + "]";
+        + super.getAtk() + ", DEF=" + super.getDef() + ", Vel=" + super.getVel() + "]";
     }
 
     @Override

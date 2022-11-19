@@ -15,7 +15,7 @@ public class Humano extends Guerreiro {
     @Override
     public String imprimir() {
         return "Humano [Nome=" + super.getNome() + ", HP=" + super.getHp() + ", XP=" + super.getXp() + ", ATK="
-        + super.getAtk() + ", DEF=" + super.getDef() + ", Vel=" + super.getVel() + ", lista=" + super.getLista() + "]";
+        + super.getAtk() + ", DEF=" + super.getDef() + ", Vel=" + super.getVel() + "]";
     }
     
 }
