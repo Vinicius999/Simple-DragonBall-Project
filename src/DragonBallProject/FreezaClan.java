@@ -31,7 +31,13 @@ public class FreezaClan extends Guerreiro implements Extraterreste {
 
     @Override
     public void transformacao() {
+        setForma(getForma() + 1);
         System.out.println(getNome()+" assume a forma "+ getForma());
+        setHp((getForma()+1) * getHp());
+        setXp((getForma()+1) * getXp());
+        setAtk((getForma()+1) * getAtk());
+        setDef((getForma()+1) * getDef());
+        setVel((getForma()+1) * getVel());
     }
 
 }

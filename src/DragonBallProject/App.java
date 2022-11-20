@@ -21,6 +21,26 @@ public class App {
 
         Scanner sc = new Scanner(System.in);
 
+    
+        gerenG.imprimirTodos();
+
+        System.out.println("SELECIONAR CONFRONTO");
+        System.out.println("Nome do 1º guerreiro: ");
+        String nome01 = sc.nextLine();
+        System.out.println("Nome do 2º guerreiro: ");
+        String nome02 = sc.nextLine();
+
+  
+        if ( luta.selecionarConfronto(gerenG, nome01, nome02) ) {
+            System.out.println("Iniciar Luta? \n1 - SIM\t2 - NÃO");
+            if ( sc.nextInt() == 1 ) {
+                luta.iniciarLuta();
+            }
+
+        } else {
+            System.out.println("Luta não pode ser iniciada");
+        }
+
         gerenG.imprimirTodos();
         
         System.out.println("\nBuscar guerreiro: ");
@@ -39,18 +59,8 @@ public class App {
         if ( ! gerenG.buscarGuerreiro(sc.next()) ) {
             System.out.println("Guerreiro não encontrado");
         }
-        
+
         gerenG.imprimirTodos();
-
-/*       
-        String nome01 = sc.next("Nome do primeiro guerreiro: ");
-        String nome02 = sc.next("Nome do segundo guerreiro: ");
-        if (luta.selecionarConfronto(nome01, nome02)) {
-            luta.iniciarLuta();
-        }
- */
-
-
 
         sc.close();
     }

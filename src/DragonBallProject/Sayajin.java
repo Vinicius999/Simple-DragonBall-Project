@@ -19,7 +19,7 @@ public class Sayajin extends Guerreiro implements Extraterreste {
     
     @Override
     public void atacar() {
-        // implementações futuras
+        // implementações completa futuramente
         System.out.println(getNome()+" ataca!");
     }
 
@@ -31,7 +31,13 @@ public class Sayajin extends Guerreiro implements Extraterreste {
 
     @Override
     public void transformacao() {
-        
+        setSuperSayajin(getSuperSayajin() + 1);
+        System.out.println(getNome()+" se transforma em Super Sayajin "+ getSuperSayajin());
+        setHp((getSuperSayajin()+1) * getHp());
+        setXp((getSuperSayajin()+1) * getXp());
+        setAtk((getSuperSayajin()+1) * getAtk());
+        setDef((getSuperSayajin()+1) * getDef());
+        setVel((getSuperSayajin()+1) * getVel());
     }
 
 }

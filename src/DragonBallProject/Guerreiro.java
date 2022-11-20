@@ -1,6 +1,6 @@
 package DragonBallProject;
 
-import java.util.ArrayList;
+//import java.util.ArrayList;
 
 public abstract class Guerreiro {
     private String nome;
@@ -17,7 +17,7 @@ public abstract class Guerreiro {
     public Guerreiro(String nome, int hp, int xp, int atk, int def, int vel) {
         this.nome = nome;
         this.hp = hp;
-        this.hp = xp;
+        this.xp = xp;
         this.atk = atk;
         this.def = def;
         this.vel = vel;
