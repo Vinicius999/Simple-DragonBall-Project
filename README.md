@@ -12,7 +12,7 @@
 ## Autores
 
 - [Augusto Vinicius da Silva](https://github.com/Vinicius999)
-- [Emson da Silva Franca](http://eelslap.com/)
+- [Emson da Silva Franca](https://github.com/ultraemson)
 - [José Joalyson Silva de Medeiros](https://pointerpointer.com/)
 - [Marcelo Henrique Mesquita da Silva](http://eelslap.com/)
 
